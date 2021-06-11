@@ -10,7 +10,6 @@
 #define CMDLENGTH		50
 
 typedef struct {
-	char* icon;
 	char* command;
 	unsigned int interval;
 	unsigned int signal;
@@ -104,11 +103,9 @@ void getcmd(const Block *block, char *output)
         e = errno;
     } while (!s && e == EINTR);
 	pclose(cmdf);
-	int i = strlen(block->icon);
-	strcpy(output, block->icon);
-    strcpy(output+i, tmpstr);
+    strcpy(output, tmpstr);
 	remove_all(output, '\n');
-	i = strlen(output);
+	int i = strlen(output);
     if ((i > 0 && block != &blocks[LENGTH(blocks) - 1])){
         strcat(output, delim);
     }

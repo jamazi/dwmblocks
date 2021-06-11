@@ -1,4 +1,7 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
+
+#define BLOCK(icon, bgcolor, fgcolor, cmd, interval, signal) { "printf '%s%s%s%s^d^\n' \"" fgcolor "\" \"" bgcolor "\" \"" icon "\" \"$(" cmd ")\"", interval, signal }
+
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
     {"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
