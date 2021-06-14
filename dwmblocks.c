@@ -7,7 +7,7 @@
 #include <errno.h>
 #include <X11/Xlib.h>
 #define LENGTH(X) (sizeof(X) / sizeof (X[0]))
-#define CMDLENGTH		50
+#define CMDLENGTH		128
 
 typedef struct {
 	char* command;
@@ -36,7 +36,7 @@ static Display *dpy;
 static int screen;
 static Window root;
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
-static char statusstr[2][256];
+static char statusstr[2][CMDLENGTH * 4];
 static int statusContinue = 1;
 static void (*writestatus) () = setroot;
 
