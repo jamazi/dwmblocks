@@ -5,8 +5,8 @@
 static const Block blocks[] = {
     /*Icon*/        /*Bg Color*/    /*Fg Color*/    /*Command*/                 /*Update Interval*/     /*Update Signal*/
     BLOCK("",       "",             "^C1^",         "sb-volume",                5,                      1),
-    BLOCK(" ",     "",             "^C2^",         "sb-ram-usage",             2,                      2),
-    BLOCK(" ",     "",             "^C3^",         "sb-cpu-usage-temp 2",      2,                      3),
+    BLOCK(" ",     "",             "^C2^",         "sb-ram-usage -p",          2,                      2),
+    BLOCK(" ",     "",             "^C3^",         "sb-cpu-usage 2",           2,                      3),
     BLOCK("",       "",             "^C4^",         "sb-battery-status",        60,                     4),
     BLOCK("",       "",             "^C5^",         "sb-nettraffic 1",          1,                      5),
     BLOCK("",       "",             "^C6^",         "sb-prayers",               60,                     6),
